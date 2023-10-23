@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./NewsCard.module.css";
 
-interface News  {
+interface NewsCardProps  {
   id: number;
   imageUrl: string;
   title: string;
@@ -10,10 +10,10 @@ interface News  {
 }
 
 type PrivateProps = {
-  data: News
+  data: NewsCardProps
 }
 
-export default function NewsCard({data}: PrivateProps) {
+const NewsCard: React.FC<PrivateProps> = ({data}) =>{
   
   
   return (
@@ -22,7 +22,7 @@ export default function NewsCard({data}: PrivateProps) {
     <h1>{data.title}</h1>
 
       <div className={styles.newsImgDiv}>
-        <img alt="No image" src={data.imageUrl} className={styles.image2}></img>
+        <img alt="No img" src={data.imageUrl} className={styles.image2}></img>
       </div>
       
         <p className={styles.newsCardParag}>
@@ -33,3 +33,5 @@ export default function NewsCard({data}: PrivateProps) {
     </div>
   );
 }
+
+export default NewsCard
