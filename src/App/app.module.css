@@ -1,0 +1,7 @@
+.newsCardDiv{
+    display: grid;
+    grid-template-columns: 600px 600px;
+    grid-template-rows: 600px 600px;
+    align-items: center;
+    justify-content: center;
+}

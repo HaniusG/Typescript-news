@@ -1,17 +1,19 @@
 import React from 'react'
-import styles from './header.module.css'
+import styles from './Header.module.css'
 
-export default function Header() {
+const Header: React.FC = () => {
   return (
-    <div className={styles.headerDiv}>
+    <header className={styles.header}>
         <h2>
             Carousel
         </h2>
       <ul>
-        <li><h3>Home</h3></li>
-        <li className={styles.li2}><h3>Link</h3></li>
-        <li className={styles.li3}><h3>Disabled</h3></li>
+        <li><a href='#'>Home</a></li>
+        <li className={styles.li2}><a href='#'>Link</a></li>
+        <li className={styles.li3}><a href='#'>Disabled</a></li>
       </ul>
-    </div>
+    </header>
   )
 }
+
+export default Header;

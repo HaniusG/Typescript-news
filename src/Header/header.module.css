@@ -1,10 +1,17 @@
-.headerDiv{
+.header{
     display: flex;
     align-items: center;
     background-color: #343A40;
     color: #FFFFFF;
+    margin: 0;
+    font-weight: normal;
 }
-.headerDiv ul {
+
+.header h2{
+    margin-left: 20px;
+}
+
+.header ul {
     display: flex;
     list-style-type: none;
     margin: 0;
@@ -21,10 +28,13 @@
   .li3{
     opacity: 30%;
   }
-  .headerDiv ul li {
-    display: block;
+  .header ul li {
+    display: inline-block;
     text-align: center;
-    padding: 14px 16px;
+    margin-left: 20px;
     text-decoration: none;
   }
-  
+  .header a{
+    color: #FFFFFF;
+    text-decoration: none;
+  }
