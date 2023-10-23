@@ -1,0 +1,30 @@
+.headerDiv{
+    display: flex;
+    align-items: center;
+    background-color: #343A40;
+    color: #FFFFFF;
+}
+.headerDiv ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+
+  }
+  
+  .li2{
+    opacity: 50%;
+  }
+
+  .li3{
+    opacity: 30%;
+  }
+  .headerDiv ul li {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
