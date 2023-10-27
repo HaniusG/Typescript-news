@@ -23,3 +23,23 @@
     background: none;
     color: aliceblue;
 }
+
+.userMenu {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 5px;
+    color: black;
+}
+
+.userMenu ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}

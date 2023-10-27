@@ -5,7 +5,7 @@ import UserIcon from "../UserIcon";
 const Header: React.FC = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.headerH}>
+      <nav className={styles.headerH}>
         <h2>Carousel</h2>
         <ul>
           <li>
@@ -18,7 +18,7 @@ const Header: React.FC = () => {
             <a href="#">Disabled</a>
           </li>
         </ul>
-      </div>
+      </nav>
 
       <UserIcon />
     </header>

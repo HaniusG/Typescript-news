@@ -18,11 +18,14 @@ const UserIcon: React.FC = ()=>{
         <img src="https://as2.ftcdn.net/v2/jpg/03/69/19/81/1000_F_369198116_K0sFy2gRTo1lmIf5jVGeQmaIEibjC3NN.jpg" alt="" className={styles.userImg}/>
         <button onClick={handleButtonClick}>More</button>
         {isButtonClicked ?
+        <div className={styles.userMenu}>
           <ul>
-            <li>More</li>
-            <li>About</li>
+            <li>Profile</li>
             <li>Settings</li>
-          </ul>: null}
+            <li>Sign out</li>
+          </ul>
+        </div>
+          : null}
     </div>
   );
 }
