@@ -5,6 +5,14 @@
     color: #FFFFFF;
     margin: 0;
     font-weight: normal;
+    justify-content: space-between;
+}
+.headerH{
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  margin: 0;
+  font-weight: normal;
 }
 
 .header h2{
@@ -18,7 +26,6 @@
     padding: 0;
     overflow: hidden;
     text-align: center;
-
   }
   
   .li2{
@@ -38,3 +45,5 @@
     color: #FFFFFF;
     text-decoration: none;
   }
+
+  

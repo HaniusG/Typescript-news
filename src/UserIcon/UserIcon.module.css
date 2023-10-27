@@ -1,0 +1,25 @@
+.userImg{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    justify-self: right;
+    align-self: right;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+   
+}
+
+.userDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 50px;
+}
+
+.userDiv button{
+    border: none;
+    background: none;
+    color: aliceblue;
+}

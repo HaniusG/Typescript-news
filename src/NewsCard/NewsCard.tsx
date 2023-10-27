@@ -1,34 +1,27 @@
 import React from "react";
 import styles from "./NewsCard.module.css";
+import { NewsCardProps } from "./NewsCard.interface";
 
-interface NewsCardProps  {
-  id: number;
-  imageUrl: string;
-  title: string;
-  text: string;
-  pubDate: string;
-}
 
-type PrivateProps = {
-  data: NewsCardProps
-}
 
-const NewsCard: React.FC<PrivateProps> = ({data}) =>{
+
+const NewsCard: React.FC<NewsCardProps> = ({ id, title, content, image, publishDate })=>{
   
   
   return (
     <div className={styles.newsCard}>
 
-    <h1>{data.title}</h1>
+    <h1>{title}</h1>
 
       <div className={styles.newsImgDiv}>
-        <img alt="No img" src={data.imageUrl} className={styles.image2}></img>
+        <img alt="No img" src={image} className={styles.image2}></img>
       </div>
       
         <p className={styles.newsCardParag}>
-          {data.text}
+          {content}
         </p>
-        <p>{data.pubDate}</p>
+        <p>{publishDate}</p>
+        <a href="#" className={styles.readMore}>Read more</a>
       
     </div>
   );
