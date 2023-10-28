@@ -15,11 +15,11 @@
   font-weight: normal;
 }
 
-.header h2{
+.header .headerH h2{
     margin-left: 20px;
 }
 
-.header ul {
+.header .headerH ul {
     display: flex;
     list-style-type: none;
     margin: 0;
@@ -35,13 +35,13 @@
   .li3{
     opacity: 30%;
   }
-  .header ul li {
+  .header .headerH ul li {
     display: inline-block;
     text-align: center;
     margin-left: 20px;
     text-decoration: none;
   }
-  .header a{
+  .header .headerH a{
     color: #FFFFFF;
     text-decoration: none;
   }

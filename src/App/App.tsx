@@ -42,9 +42,32 @@ const App: React.FC = () => {
     },
   ];
 
+  const searchAutocomplete = [
+    {
+      text: "Hello",
+      rating: 0.3,
+    },
+    {
+      text: "Hi",
+      rating: 0.6,
+    },
+    {
+      text: "Whatts up",
+      rating: 0.9,
+    },
+    {
+      text: "Hows it going",
+      rating: 0.7,
+    },
+    {
+      text: "Yo",
+      rating: 0.1,
+    }
+  ]
+
   return (
     <div>
-      <Header />
+      <Header searchAutocomplete={searchAutocomplete}/>
       <NewsList news={news} />
     </div>
   );

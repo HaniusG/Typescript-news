@@ -9,7 +9,7 @@ import styles from "./UserIcon.module.css";
 const UserIcon: React.FC = ()=>{
   const [isButtonClicked, setIsButtonClicked] = useState(false);
 
-  const handleButtonClick = () => {
+  const handleButtonClick = ():void => {
     setIsButtonClicked(!isButtonClicked)
   }
 
