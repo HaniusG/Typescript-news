@@ -1,14 +1,13 @@
 .searchItems {
     position: absolute;
-    top: 42px;
+    top: -10x;
     background-color: #fff;
-    right: 930px;
     margin: 0;
     padding: 0;
     color: black;
 }
 
-.searchItems ul{
+.searchUl{
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -16,7 +15,7 @@
     margin-right: 40px;
     width: 100%;
 }
-.searchItems ul li{
+.searchLi{
     padding: 0px;
     margin: 0px;
     border: 1px solid black;
@@ -24,7 +23,7 @@
     width: 100%;
 }
 
-.searchItems ul li:hover{
+.searchLi:hover{
     background-color: #e9d4d4;
     display: block;
     cursor: pointer;
