@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./NewsCard.module.css";
 import { NewsCardProps } from "./NewsCard.interface";
+import { Link } from "react-router-dom";
 
 
 
@@ -21,7 +22,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ id, title, content, image, publishD
           {content}
         </p>
         <p>{publishDate}</p>
-        <a href="#" className={styles.readMore}>Read more</a>
+        <Link to={`/article/${id}`} className={styles.readMore}>Read more</Link>
       
     </div>
   );

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState, lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "../Header";
 import styles from "./App.module.css";
 import NewsList from "../NewsList";
+import Loading from "../Loading";
+
+
+const MainPage = lazy(() => import("../../pages/MainPage"));
+const AboutPage = lazy(() => import("../../pages/AboutPage"));
+const ContactPage = lazy(() => import("../../pages/ContactPage"));
+const NewsPage = lazy(() => import("../../pages/NewsPage"));
 
 const App: React.FC = () => {
-
   const news = [
     {
       id: 1,
@@ -62,14 +69,33 @@ const App: React.FC = () => {
     {
       text: "Yo",
       rating: 0.1,
-    }
-  ]
+    },
+  ];
+
+
+  const [isDarkTheme, setDarkTheme] = useState(false);
+
+  const handleTheme = (): void => {
+    setDarkTheme(!isDarkTheme)
+  }
 
   return (
-    <div>
-      <Header searchAutocomplete={searchAutocomplete}/>
-      <NewsList news={news} />
+    <div className={isDarkTheme ? styles.darktheme: ''}>
+       <BrowserRouter>
+      <Header searchAutocomplete={searchAutocomplete} handleTheme={handleTheme} isDarktheme={isDarkTheme}/>
+      <div className={styles.app}>
+        <Suspense fallback={<Loading/>}>
+          <Routes>
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/" element={<MainPage news={news} />} />
+            <Route path="/article/:id" element={<NewsPage news={news} />} />
+          </Routes>
+        </Suspense>
+      </div>
+    </BrowserRouter>
     </div>
+   
   );
 };
 

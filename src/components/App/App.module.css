@@ -1,0 +1,13 @@
+.newsCardDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.app{
+    max-width: 1100px;
+    margin: 10px auto
+}
+
+.darktheme{
+    background-color: #565555;
+}
