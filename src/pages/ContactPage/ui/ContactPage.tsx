@@ -1,9 +1,9 @@
 import React from 'react'
- 
+
 const ContactPage: React.FC = () => {
   return (
-    <div>ContactPage</div>
+    <h1>Contact Page</h1>
   )
 }
 
-export default ContactPage;
+export default ContactPage

@@ -1,99 +1,57 @@
-import React, { useState, useEffect, useRef } from "react";
-import { SearchProps, ItemProps } from "./Search.interface";
-import styles from  './Search.module.css'
+import React, { useState } from 'react'
+import styles from './Search.module.css'
+import { Item, SearchProps } from './Search.interface'
 
-const Search: React.FC<SearchProps> = ({ searchAutocomplete }) => {
-  
-  const [inputClicked, setInputClicked] = useState<boolean>(false);
+// useEffect
+// useRef
+
+const Search: React.FC<SearchProps> = ({ items }) => {
 
   const [searchText, setSearchText] = useState<string>('')
+  const [filtredItems, setFiltredItems] = useState<Item[]>([])
 
-  const [filtredItems, setFilteredItems] = useState<ItemProps[]>([])
+  const handleSearch = (text: string): void => {
+    const filtred: Item[] = items.filter((item) => {
+      return item.text.toLowerCase().includes(text.toLowerCase())
+    }).sort((a, b) => b.rating - a.rating)
 
-  const inputRef = useRef<HTMLInputElement | null>(null);
-
-  
-
-  const onInputClick = () => {
-    if(!searchText){
-      setInputClicked(true)
-      const items = searchAutocomplete.sort((a, b)=> b.rating - a.rating).slice(0, 3)
-      setFilteredItems(items)
-    }
+    setFiltredItems(filtred)
   }
 
-  const handleSearch = (text: string) => {
-    setInputClicked(false)
-    const filtred = searchAutocomplete.filter((item)=>{
-      return  item.text.toLowerCase().includes(text.toLowerCase())
-  }).sort((a, b)=> b.rating - a.rating)
-    setFilteredItems(filtred) 
-  }
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>)=>{
-    setInputClicked(false)
-    const text = event.target.value;
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const text = event.target.value
     setSearchText(text)
     handleSearch(text)
   }
 
-  const handleSelectedItem = (item: ItemProps) => {
-    setInputClicked(false)
+  const handleSelectItem = (item: Item): void => {
     setSearchText(item.text)
-    setFilteredItems([])
+    setFiltredItems([])
   }
 
-  // const handleDocumentClick = (e: MouseEvent) => {
-  //   if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
-  //     // Click occurred outside the input, so blur the input
-  //     inputRef.current.blur();
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener('click', handleDocumentClick);
-
-    
-  //   return () => {
-  //     document.removeEventListener('click', handleDocumentClick);
-  //   };
-  // }, []);
-
-  
-  
-
   return (
-    <div>
-      <input 
-        ref={inputRef}
-        type="text" 
+    <div className={styles.searchBox}>
+      <input
+        type='text'
+        placeholder='Search...'
+        className={styles.input}
         onChange={handleInputChange}
         value={searchText}
-        onClick={onInputClick}
-
       />
-      <button>Search</button>
-       {(searchText || inputClicked) && Object.keys(filtredItems).length ?
-        <div className={styles.searchItems}>
-        <ul className={styles.searchUl}>
-          {
-            filtredItems.map((item)=>{
-              return(
-                  <li onClick={()=>handleSelectedItem(item)} key = {item.text} className={styles.searchLi} >
-                    {item.text}/{item.rating}
-                  </li>
-              )   
+
+      <ul className={styles.list}>
+        {
+          filtredItems.map((item) => {
+            return (
+              <li key={item.text} onClick={() => handleSelectItem(item)}>
+                {item.text} / {item.rating}
+              </li>
+            )
           })
         }
-
-        </ul>
-      </div>: null
-       }
-        
-
+      </ul>
     </div>
-    
-  );
-};
+  )
+}
 
-export default Search;
+export default Search

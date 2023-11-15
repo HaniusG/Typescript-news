@@ -1,4 +1,8 @@
-.newsCardDiv{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.list {
+  clear: both;
+}
+
+.card {
+  float: left;
+  margin: 10px;
 }

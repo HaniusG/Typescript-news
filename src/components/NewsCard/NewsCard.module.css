@@ -1,42 +1,38 @@
-.newsCard{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    justify-self: center;
-    width: 500px;
+.card {
+  width: 300px;
+  margin: 5px;
+  border-radius: 5px;
+  padding-bottom: 10px;
 }
 
-
-.infoCard h1{
-    font-size: 60px;
+.card img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border-radius: 5px 5px 0 0;
 }
 
-.imgDiv{
-    margin: 0 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card h2 {
+  margin: 20px 0 10px 0;
+  text-transform: uppercase;
 }
 
-.image2{
-    background-color: #FAD77B;
-    width: 500px;
-    height: 300px;
+.card p {
+  padding: 0 5px;
 }
 
-.readMore {
-    padding: 8px 16px;
-    font-style: 14px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #343A40;
-    border-radius: 5px;
+.date {
+  margin: 10px 0;
 }
 
-.readMore:hover{
-    background-color:  #22262a;
-    
+.read_more {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color: #aa2929;
+  border-radius: 5px;
+}
+
+.read_more:hover {
+  background-color: #480606;
 }
